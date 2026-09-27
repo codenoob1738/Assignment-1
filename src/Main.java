@@ -1,7 +1,13 @@
 public class Main {
     public static void main(String[] args) {
-      // Assignment requirement: Scan the full record given all at once
-      String[][] schoolRecords = {
+      String personTitle = "";                         // Persons role (professor/TA/Student)
+      String firstName = "";                        // First name
+      String lastName = "";                         // Last name
+      int courseHours = 0;
+      String courseName = "";
+
+      // Scan the full record given all at once
+      String[][] orgSchoolRecords = {
         {"Professor", "Isaac", "Newton", "Physics", "6"},
         {"TA", "Marie", "Curie", "Physics", "6"},
         {"Professor", "Isaac", "Newton", "Calculus", "4"},
@@ -18,36 +24,39 @@ public class Main {
         {"Student", "Will", "Smith", "Chemistry", "6"}
       }; 
 
-      // Place holder array for People Objects
-      People[] people = new People[20];
-      int count = 0;
+      // To store data after removing duplicated date
+      String[][] validatedSchoolRecords = {};
 
       // Place holder, variable name are subjected to change
-      for (int i = 0; i < schoolRecords.length; i++) {
-        String role = schoolRecords[i][0];                         // Persons role (professor/TA/Student)
-        String first = schoolRecords[i][1];                        // First name
-        String last = schoolRecords[i][2];                         // Last name
-        int courseHours = Integer.parseInt(schoolRecords[i][4]);   // Hours put into course
+      // Display original data record
+      // To be called after validation of duplicate records module
+      System.out.println("-----------------------------------");
+      System.out.println("|      Original data Records      |");
+      System.out.println("-----------------------------------");
+      for (int i = 0; i < orgSchoolRecords.length; i++) {
+        personTitle = orgSchoolRecords[i][0];                         // Persons role (professor/TA/Student)
+        firstName = orgSchoolRecords[i][1];                        // First name
+        lastName = orgSchoolRecords[i][2];                         // Last name
+        courseName = orgSchoolRecords[i][3];
+        courseHours = Integer.parseInt(orgSchoolRecords[i][4]);   // Hours put into course
+        System.out.println(personTitle +  ' ' + firstName + ' ' + lastName + ' ' + courseName + ' ' + courseHours);
       }
-
-      // Assignment requirement: Every person must be mentioned in the printout only once.
-      // TODO: Check if person already exists in array
-      // TODO: If not, create a subclass object
 
       // Assignmen requirement: produce a printout of all the people with total hours through polymorphism.
       // TODO: Use polymorphism to compute hours
       // TODO: add hours to the person
       
-      // Assignment requirement: The final printout format - Title (Professor/TA/Student) FirstName LastName TotalHours
-      for (int i = 0; i < people.length; i++) {
-        if (people[i] !=null) {
+      // The final printout format - Title (Professor/TA/Student) FirstName LastName TotalHours
+      /* for (int i = 0; i < schoolRecords.length; i++) {
+        if (valSchoolRecords[i] !=null) {
           System.out.println(
-            people[i].getTitle() + " " +
-            people[i].getFirstName() + " " +
-            people[i].getLastName() + " " +
-            people[i].getTotalHours()
+            valSchoolRecords[i].getPersonTitle() + " " +
+            valSchoolRecords[i].getFirstName() + " " +
+            valSchoolRecords[i].getLastName() + " " +
+            valSchoolRecords[i].getCourseName()  + " " +
+            valSchoolRecords[i].getCourseHours()
           );
         }
-      }
+      } // For loop */
     }
 }
