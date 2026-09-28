@@ -21,6 +21,7 @@ public class Main {
         {"Professor", "Adam", "Smith", "Economics", "3"},
         {"TA", "Marie", "Curie", "Chemistry", "6"},
         {"Student", "Brad", "Pitt", "Chemistry", "6"},
+        {"TA", "Carl", "Gauss", "Calculus", "4"},   // 
         {"Student", "Will", "Smith", "Chemistry", "6"}
       }; 
 
@@ -66,37 +67,46 @@ public class Main {
       }
 
       // Printout original record (Title First name, Last name, Course name, Course/lab hours)
-      System.out.println("-----------------------------------");
-      System.out.println("|      Original data Records      |");
-      System.out.println("-----------------------------------");
+      System.out.println("---------------------------------------------------------");
+      System.out.println("|  Original data Records (Including duplicate record)   |");
+      System.out.println("---------------------------------------------------------");
       for (int i = 0; i < orgSchoolRecords.length; i++) {
         personTitle = orgSchoolRecords[i][0];                     // Persons role (professor/TA/Student)
         firstName = orgSchoolRecords[i][1];                       // First name
         lastName = orgSchoolRecords[i][2];                        // Last name
         courseName = orgSchoolRecords[i][3];                      // Course Name
         courseHours = Integer.parseInt(orgSchoolRecords[i][4]);   // Hours put into course/lab
-        System.out.println(personTitle +  ' ' + firstName + ' ' + lastName + ' ' + courseName + ' ' + courseHours);
+        // System.out.println(personTitle +  ' ' + firstName + ' ' + lastName + ' ' + courseName + ' ' + courseHours);
+        System.out.printf("| %-10s | %-9s | %-10s | %-10s | %-2d |%n", personTitle, firstName, lastName, courseName, courseHours);
       }
+      System.out.println("---------------------------------------------------------");
+      System.out.println(" ");
 
-      System.out.println("----------------------------------------------");
-      System.out.println("|      Validated data without duplication    |");
-      System.out.println("----------------------------------------------");
+      System.out.println(" ");
+      System.out.println("---------------------------------------------------------");
+      System.out.println("|            Data without duplicated records            |");
+      System.out.println("---------------------------------------------------------");
       for (int i = 0; i < validatedSchoolRecords.length; i++) {
         personTitle = validatedSchoolRecords[i][0];
         firstName = validatedSchoolRecords[i][1];
         lastName = validatedSchoolRecords[i][2];
         courseName = validatedSchoolRecords[i][3];
         courseHours = Integer.parseInt(validatedSchoolRecords[i][4]);
-        System.out.println(personTitle + " " + firstName + " " + lastName + " " + courseName + " " + courseHours);
+        // System.out.println(personTitle + " " + firstName + " " + lastName + " " + courseName + " " + courseHours);
+        System.out.printf("| %-10s | %-9s | %-10s | %-10s | %-2d |%n", personTitle, firstName, lastName, courseName, courseHours);
       }
+      System.out.println("---------------------------------------------------------");
+      System.out.println(" ");
       
       // Produce a printout of all the people with their hours
-      System.out.println("-----------------------------------");
-      System.out.println("|      Total Hours Per Person     |");
-      System.out.println("-----------------------------------");
+      System.out.println("---------------------------------------------");
+      System.out.println("|           Total Hours Per Person          |");
+      System.out.println("---------------------------------------------");
       // Printout format [ Title, first name, last name, total hours attended ]
       for (int i = 0; i < peopleCount; i++) {
         uniquePersons[i].printSummary();
       }
+      System.out.println("---------------------------------------------");
+      System.out.println(" ");
     }
 }

@@ -46,6 +46,7 @@ public abstract class Person implements ParticipateHours {
 
   // Displays persons title, first/last name, and hours spent
   public void printSummary() {
-    System.out.println(getTitle() + " " + firstName + " " + lastName + " " + "Total hours: " + totalHours);
+    // System.out.println(getTitle() + " " + firstName + " " + lastName + " " + "Total hours: " + totalHours);
+    System.out.printf("| %-10s | %-9s | %-10s | %-3d |%n", getTitle(), firstName, lastName, totalHours);
   }
 }
