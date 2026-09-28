@@ -25,7 +25,7 @@ public class Main {
       }; 
 
       // To store data after removing duplicated date
-      String[][] validatedSchoolRecords = Input.removeDuplicates(schoolRecords);
+      String[][] validatedSchoolRecords = Input.removeDuplicates(orgSchoolRecords);
       // Unique objects array (looks through name to find total hours)
       Person[] uniquePersons = new Person[20];
       int peopleCount = 0;
