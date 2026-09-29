@@ -23,9 +23,6 @@ public class Input {
                         && people[b][2].equals(lastName)
                         && people[b][3].equals(courseName)) { // If the person is found in the people array, update their total hours
 
-                    int total = Integer.parseInt(people[b][4]);
-                    people[b][4] = String.valueOf(total + hours);
-
                     found = true;
                     break;
                 }
